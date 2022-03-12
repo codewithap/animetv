@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: none;
+    outline: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #252A39;
+    padding: 10px 5px;
+    
+}
+
+svg{
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #e1e1e1;
+}
+
+body{
+    background: #252A39;
+}
+
+.tittle {
+    width: 100%;
+}
+
+.tittle h2 {
+    color: #fff;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56vh;
+    flex-direction: column;
+    background: #fff;
+}
+
+input{
+    width: 68%;
+    height: 2.5rem;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    border: 0.5px solid #5B737C;
+    background: #FDFDFD;
+    text-align: center;
+}
+
+::placeholder{
+    text-align: center;
+}
+
+button{
+    font-size: 1.2rem;
+    padding: 0.4rem 1.1rem;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 0.6px solid #4E4E4E;
+    background: #2D2E3D;
+    color: #fff;
+}
+
+button:hover{
+    color: #CAD01B;
+    border: 2px solid #393E3E;
+    transition: 0.3s ease-in;
+}
+
+#nav-bar{
+    background: #262F39;
+    height: 100%;
+    width: 0px;
+    position: absolute;
+    z-index: 6636;
+}
+
+#closeNav{
+    padding: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#nav-bar-section{
+    padding: 0;
+}
+
+hr{
+    background: #D4D6D8;
+    border:0.4px solid #D4D6D8;
+    width: 100%;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    list-style: none;
+}
+
+ul li{
+    width: 100%;
+}
+
+ul li a{
+    color: #fff;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    text-align: center;
+    background: #6906D3;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+footer{
+    background: #252A39;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 8%;
+
+}
+
+footer h2{
+    color: #fff;
+}
+
+footer p{
+    color: #f5f5f5;
+}
+
+footer a{
+    color: #0588E8;
+}
