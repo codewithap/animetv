@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='css/search.css') }}" type="text/css" media="all" />
+    <title>Search Results For Anime "{{q}}"</title>
+</head>
+<body>
+    <main id="nav-bar">
+        <section id="nav-bar-section">
+            <span id="closeNav" onclick="closeNav()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+                </svg></span><br>
+            <ul>
+                <hr><li><a href="/">Home</a></li><hr>
+            </ul>
+        </section>
+    </main>
+    <nav>
+        <span id="navopen" onclick="navopen()"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg></span>
+        <div class="tittle">
+            <h2 style="text-align: center">AnimeTV</h2>
+        </div>
+        <span id="sBtn"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </svg></span>
+    </nav>
+    
+    <form action="" method="post" id="searchForm">
+        <input placeholder="Enter Anime Name" autocomplete="off" type="hidden" id="search" name="search"/>
+    </form>
+<br>
+
+<div class="container">
+    
+    {% for n in n_arr %}
+    <form action="/episodes/{{links[n]}}" method="post" accept-charset="utf-8">
+        <div class="card">
+            <button class="img">
+                <img src="{{img[n]}}" alt="{{title[n]}}"/>
+            </button>
+            <button class="title">
+                <p>{{title[n]}}</p>
+            </button>
+        </div>
+    </form>
+    {% endfor %}
+    
+</div><br><br>
+ <footer>
+        <br>
+        <h2 style="text-align: center;text-decoration: underline">AnimeTV</h2>
+        <br>
+        <p>This website is created by MR.Arijit Paine</p>
+        <p style="margin-top:5px;text-align: center;">Source Code of This Website <a href="https://github.com/AP165/animeTV">https://github.com/AP165/animeTV</a></p>
+        <br>
+        <p style="color: #A4A4A4;text-align: center"><strong>Disclaimer:</strong> This site does not store any files on its server. All contents are provided from <a href="gogoanime.lol">gogoanime.lol</a>.</p>
+        <br><br>
+    </footer>
+    
+<script>
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
+</script>
+<script src="{{url_for('static', filename='js/search.js')}}" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>

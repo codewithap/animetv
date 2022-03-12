@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style type="text/css" media="all">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: none;
+            outline: none;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgb(37, 42, 57);
+            padding: 10px 5px;
+
+        }
+
+        svg {
+            width: 2.5rem;
+            height: 2.5rem;
+            color: #e1e1e1;
+        }
+
+        .tittle {
+            width: 100%;
+        }
+
+        .tittle h2 {
+            color: #E1E1E1;
+        }
+
+        #nav-bar {
+            background: #262F39;
+            height: 100%;
+            width: 0px;
+            position: fixed;
+            z-index: 6636;
+        }
+
+        #closeNav {
+            padding: 10px 10px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        #nav-bar-section {
+            padding: 0;
+        }
+
+        hr {
+            background: #D4D6D8;
+            border: 0.4px solid #D4D6D8;
+            width: 100%;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            list-style: none;
+        }
+
+        ul li {
+            width: 100%;
+        }
+
+        ul li a {
+            color: #fff;
+            font-size: 1.2rem;
+            width: 100%;
+            height: 2rem;
+            display: flex;
+            text-align: center;
+            background: #6906D3;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+        
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+        
+        img {
+            width: 15em;
+            height: 20em;
+            background: #42445A;
+            border: 1px solid #42445A;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .summaryDiv {
+            margin: 10px 7%;
+            font-size: 0.85rem;
+        }
+
+        .episodesBtn {
+            background: #323348;
+            color: #FFFFFF;
+            border: 1px solid #323348;
+            font-size: 0.77rem;
+            padding: 5px 0;
+            min-width: 105px;
+            border-radius: 3px;
+            margin: 3px;
+            letter-spacing: -.5px;
+        }
+
+        .episodesBtn:hover {
+            color: red;
+            background: #4C4D60;
+            transition: 0.4s;
+        }
+
+        .episodes {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+    <meta name="description" content="{{info[2]}}">
+    <title>{{info[0]}}</title>
+</head>
+
+<body>
+    <main id="nav-bar">
+        <section id="nav-bar-section">
+            <span id="closeNav" onclick="closeNav()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+                </svg></span><br>
+            <hr>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul><hr>
+        </section>
+    </main>
+    <nav>
+        <span id="navopen" onclick="navopen()"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg></span>
+        <div class="tittle">
+            <h2 style="text-align: center">AnimeTV</h2>
+        </div>
+    </nav>
+    <h3 style="text-align:center;margin: 10px">{{info[0]}}</h3>
+    <div class="container">
+        <img src="{{info[1]}}" alt="{{info[0]}}" />
+    </div><br>
+    <div class="summaryDiv">
+        <p class="summary">
+            <strong style="color: #3f3f3f">Plot Summary:</strong><span id="summary">{{info[2][0].get_text()}}</span>
+        </p>
+        <br>
+        <p class="info">
+            <strong style="color: #3f3f3f">Type:</strong><span id="info1">{{info[2][1].get_text()}}</span>
+        </p>
+        <br>
+        <p class="info">
+            <strong style="color: #3f3f3f">Date aired:</strong><span id="info2">{{info[2][2].get_text()}}</span>
+        </p>
+        <br>
+        <p class="info">
+            <strong style="color: #3f3f3f">Status:</strong><span id="info3">{{info[2][5].get_text()}}</span>
+        </p>
+        <br>
+        <p class="info">
+            <strong style="color: #3f3f3f">Other name:</strong><span id="info4">{{info[2][6].get_text()}}</span>
+        </p><br>
+        <br>
+        <h3 style="text-align: center;">👇👇Watch & Download👇👇</h3>
+        <hr><br>
+        <div class="episodes">
+            {% for n in n_arr %}
+            <a target="_blank" href="/watch?name={{epLinks[n]['href'].replace('https://gogoanime.lol/', "")}}"><button id="epBtn{{n+1}}" onclick="save('epBtn{{n+1}}')" class="episodesBtn">{{epLinks[n].text}}</button></a>
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        let summary = document.querySelector('#summary');
+        let sText = summary.innerHTML;
+        summary.innerHTML = sText.replace('Plot Summary:', '');
+
+        let info1 = document.querySelector('#info1');
+        let info1Text = info1.innerHTML;
+        info1.innerHTML = info1Text.replace('Type:', '');
+
+        let info2 = document.querySelector('#info2');
+        let sT = info2.innerHTML;
+        info2.innerHTML = sT.replace('Date aired:', '');
+
+        let info3 = document.querySelector('#info3');
+        let sT_ = info3.innerHTML;
+        info3.innerHTML = sT_.replace('Status:', '');
+
+        let info4 = document.querySelector('#info4');
+        let sT__ = info4.innerHTML;
+        info4.innerHTML = sT__.replace('Other name:', '');
+        
+    </script>
+    <script src="{{url_for('static', filename='js/search.js')}}" type="text/javascript" charset="utf-8"></script>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+</body>
+
+</html>
